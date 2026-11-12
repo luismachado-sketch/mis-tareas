@@ -33,7 +33,13 @@ export default function FormularioTarea({ inicial, usuarios = [], onGuardar, onC
         descripcion: descripcion.trim(),
         estado,
         responsable: responsable.trim(),
-        responsable_id: usuarios.find((u) => u.nombre === responsable)?.id || null,
+        /* Si el rol no tiene listado de usuarios (rol usuario), el campo
+           llega vacío: se conserva el responsable_id original de la tarea
+           para que no pierda su dueño y desaparezca del tablero. */
+        responsable_id:
+          usuarios.find((u) => u.nombre === responsable)?.id ||
+          inicial?.responsable_id ||
+          null,
       })
     } finally {
       setEnviando(false)

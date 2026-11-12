@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useAuth } from '../context/AuthContext'
-import { InsigniaRol } from '../components/Insignias'
 
 /* =========================================================
    PANTALLA DE ACCESO (login / registro)
@@ -126,15 +125,8 @@ export default function Acceso() {
             {enviando ? 'Procesando…' : modo === 'login' ? 'Entrar' : 'Crear cuenta'}
           </button>
 
-          {modo === 'login' && (
-            <div className="acceso-demo tarjeta">
-              <strong>Cuentas de prueba (modo demo):</strong>
-              <div className="demo-linea"><code>admin@demo.cl</code> <InsigniaRol rol="administrador" /></div>
-              <div className="demo-linea"><code>super@demo.cl</code> <InsigniaRol rol="supervisor" /></div>
-              <div className="demo-linea"><code>user@demo.cl</code> <InsigniaRol rol="usuario" /></div>
-              <div className="demo-linea suave">Contraseña: <code>demo1234</code></div>
-            </div>
-          )}
+          {/* Las credenciales de prueba NO se muestran aquí por seguridad.
+              Están en el archivo Cuentas_de_prueba.txt de la carpeta del proyecto. */}
         </form>
       </div>
     </div>

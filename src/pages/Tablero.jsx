@@ -78,6 +78,20 @@ export default function Tablero() {
         valores.responsable_id = usuario.id
       }
 
+      /* Si el formulario no pudo resolver el responsable (rol sin listado
+         de usuarios), se mantiene el que ya tenía la tarea. */
+      if (!valores.responsable_id && editando?.responsable_id) {
+        valores.responsable_id = editando.responsable_id
+        if (!valores.responsable) valores.responsable = editando.responsable
+      }
+
+      /* Quien solo ve sus propias tareas siempre es el responsable:
+         si la tarea quedara sin dueño, dejaría de aparecerle en la lista. */
+      if (!verTodas) {
+        valores.responsable_id = usuario.id
+        if (!valores.responsable) valores.responsable = usuario.nombre
+      }
+
       if (editando) {
         await datos.actualizarTarea(editando.id, valores)
         mostrar('Tarea actualizada correctamente.')
