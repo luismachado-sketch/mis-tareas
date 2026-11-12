@@ -1,0 +1,87 @@
+/* =========================================================
+   SISTEMA DE DISEÑO - "Mis Tareas"
+   Paleta de colores y tipografía consistentes en todas las
+   pantallas (Actividad 3: Diseño visual y usabilidad)
+   ========================================================= */
+
+:root {
+  /* --- Paleta principal (cálida, tipo crema/terracota) --- */
+  --bg: #f7f3ec;
+  --bg-soft: #efe8dc;
+  --surface: #ffffff;
+  --surface-alt: #fbf8f3;
+
+  /* --- Texto --- */
+  --ink: #211c18;
+  --ink-soft: #4a423b;
+  --muted: #857a70;
+
+  /* --- Acento --- */
+  --accent: #c2562a;
+  --accent-dark: #a4441f;
+  --accent-soft: #f3e0d6;
+
+  /* --- Estados de la tarea --- */
+  --estado-pendiente: #d9911f;
+  --estado-pendiente-bg: #fdf1dc;
+  --estado-progreso: #3f74b8;
+  --estado-progreso-bg: #e3edf9;
+  --estado-hecha: #3f8f61;
+  --estado-hecha-bg: #e2f2e8;
+
+  /* --- Roles de usuario --- */
+  --rol-admin: #7b4fb5;
+  --rol-admin-bg: #efe6fa;
+  --rol-supervisor: #2f7d8f;
+  --rol-supervisor-bg: #e0f1f4;
+  --rol-usuario: #6b6157;
+  --rol-usuario-bg: #ece6df;
+
+  /* --- Semántica --- */
+  --ok: #3f8f61;
+  --ok-bg: #e2f2e8;
+  --error: #c0392b;
+  --error-bg: #fbe7e5;
+  --aviso: #b8860b;
+  --aviso-bg: #fdf6e0;
+
+  /* --- Bordes y sombras --- */
+  --border: #e6ddd1;
+  --border-strong: #d3c7b7;
+  --shadow-sm: 0 1px 2px rgba(52, 38, 24, 0.06);
+  --shadow-md: 0 4px 14px rgba(52, 38, 24, 0.09);
+  --shadow-lg: 0 14px 38px rgba(52, 38, 24, 0.16);
+
+  /* --- Radios --- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-full: 999px;
+
+  /* --- Tipografía ---
+     Titulares: Georgia (serif) / Cuerpo: Arial (sans) */
+  --font-titulo: Georgia, "Times New Roman", serif;
+  --font-cuerpo: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+  /* --- Escala tipográfica --- */
+  --t-xs: 0.75rem;
+  --t-sm: 0.8125rem;
+  --t-base: 0.9375rem;
+  --t-md: 1rem;
+  --t-lg: 1.125rem;
+  --t-xl: 1.5rem;
+  --t-2xl: 2rem;
+  --t-3xl: 2.75rem;
+
+  /* --- Espaciado --- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+
+  /* --- Layout --- */
+  --ancho-max: 1180px;
+}
