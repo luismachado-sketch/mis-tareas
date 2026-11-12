@@ -236,6 +236,27 @@ code {
 .barra-relleno { height: 100%; border-radius: var(--r-full); transition: width .4s ease; }
 .barra-valor { font-size: var(--t-sm); color: var(--muted); text-align: right; }
 
+/* ---------- Vista de solo lectura ---------- */
+.barra-lectura {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
+}
+.barra-lectura .contenedor { min-height: 64px; gap: var(--sp-4); }
+.solo-lectura-insignia {
+  background: var(--aviso-bg);
+  color: var(--aviso);
+  border: 1px solid #f0e0ae;
+  font-size: var(--t-sm);
+  padding: 5px 14px;
+}
+.solo-lectura-insignia::before { background: var(--aviso); }
+.aviso-lectura { margin-bottom: var(--sp-5); }
+.enlace-lectura { color: var(--aviso) !important; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .pantalla-acceso { grid-template-columns: 1fr; }

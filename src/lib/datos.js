@@ -6,6 +6,7 @@
    ========================================================= */
 
 import { supabase, SUPABASE_ACTIVO } from './supabase'
+import { avisarCambio } from './bus'
 
 const K_TAREAS = 'mt_tareas'
 const K_USUARIOS = 'mt_usuarios'
@@ -119,12 +120,14 @@ export async function crearTarea(tarea) {
   if (SUPABASE_ACTIVO) {
     const { data, error } = await supabase.from('tareas').insert(nueva).select().single()
     if (error) throw error
+    avisarCambio()
     return data
   }
 
   const tareas = leer(K_TAREAS, [])
   tareas.unshift(nueva)
   guardar(K_TAREAS, tareas)
+  avisarCambio()
   return nueva
 }
 
@@ -135,6 +138,7 @@ export async function actualizarTarea(id, cambios) {
     const { data, error } = await supabase
       .from('tareas').update(cambios).eq('id', id).select().single()
     if (error) throw error
+    avisarCambio()
     return data
   }
 
@@ -143,6 +147,7 @@ export async function actualizarTarea(id, cambios) {
   if (i < 0) throw new Error('Tarea no encontrada.')
   tareas[i] = { ...tareas[i], ...cambios }
   guardar(K_TAREAS, tareas)
+  avisarCambio()
   return tareas[i]
 }
 
@@ -150,9 +155,11 @@ export async function eliminarTarea(id) {
   if (SUPABASE_ACTIVO) {
     const { error } = await supabase.from('tareas').delete().eq('id', id)
     if (error) throw error
+    avisarCambio()
     return
   }
   guardar(K_TAREAS, leer(K_TAREAS, []).filter((t) => t.id !== id))
+  avisarCambio()
 }
 
 /* ---------- DATOS DE EJEMPLO ---------- */

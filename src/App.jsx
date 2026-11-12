@@ -5,6 +5,7 @@ import Acceso from './pages/Acceso'
 import Tablero from './pages/Tablero'
 import Usuarios from './pages/Usuarios'
 import Reporte from './pages/Reporte'
+import SoloLectura from './pages/SoloLectura'
 import { InsigniaRol } from './components/Insignias'
 import { puede } from './lib/permisos'
 import { configResumen } from './lib/supabase'
@@ -37,6 +38,9 @@ function BarraNavegacion() {
               onClick={() => setMenuAbierto(false)}
             >{e.etiqueta}</NavLink>
           ))}
+          <a className="enlace enlace-lectura" href="/solo-lectura" target="_blank" rel="noreferrer">
+            Vista pública ↗
+          </a>
         </nav>
 
         <div className="usuario-nav">
@@ -61,6 +65,11 @@ function BarraNavegacion() {
 function ContenidoProtegido() {
   const { usuario, cargando } = useAuth()
   const location = useLocation()
+
+  /* ---- Zona pública: solo lectura, no requiere sesión ---- */
+  if (location.pathname === '/solo-lectura') {
+    return <SoloLectura />
+  }
 
   if (cargando) {
     return <div className="vacio" style={{ marginTop: 80 }}>Cargando aplicación…</div>
