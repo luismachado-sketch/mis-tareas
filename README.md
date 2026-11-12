@@ -10,6 +10,17 @@ de datos en la nube.
 
 ---
 
+## Enlaces del proyecto
+
+| Recurso | URL |
+|---|---|
+| Aplicación publicada | https://mis-tareas-taupe.vercel.app |
+| Vista pública (solo lectura) | https://mis-tareas-taupe.vercel.app/solo-lectura |
+| Repositorio | https://github.com/luismachado-sketch/mis-tareas |
+| Panel de Vercel | https://vercel.com/ev-03-lm/mis-tareas |
+
+---
+
 ## 1. Requisitos previos
 
 | Herramienta | Versión mínima | Para comprobarla |
@@ -27,7 +38,7 @@ Opcional para publicar: cuenta en **GitHub**, **Supabase** y **Vercel**.
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/TU-USUARIO/mis-tareas.git
+git clone https://github.com/luismachado-sketch/mis-tareas.git
 cd mis-tareas
 
 # 2. Instalar dependencias
@@ -143,7 +154,7 @@ la base de datos mediante políticas de seguridad por fila (RLS) en
    git add .
    git commit -m "Primera versión del prototipo Mis Tareas"
    git branch -M main
-   git remote add origin https://github.com/TU-USUARIO/mis-tareas.git
+   git remote add origin https://github.com/luismachado-sketch/mis-tareas.git
    git push -u origin main
    ```
 2. En [vercel.com](https://vercel.com) → **Add New → Project** → importar el repositorio.
