@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Python (backend)
+__pycache__/
+*.pyc
+backend/mis_tareas.db
+backend/.secreto
